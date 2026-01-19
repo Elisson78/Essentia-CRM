@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# agents folder (Antigravity)
+agents/
+
+# environment variables
+.env
+.env.production

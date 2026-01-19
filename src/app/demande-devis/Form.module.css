@@ -1,0 +1,132 @@
+.container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 40px;
+    background: var(--ch-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border-top: 5px solid var(--ch-red);
+}
+
+.title {
+    text-align: center;
+    color: var(--ch-red);
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.subTitle {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.formGroup {
+    margin-bottom: 25px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.2s;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+    outline: none;
+    border-color: var(--ch-red);
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 15px;
+    background: var(--ch-red);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.submitBtn:hover {
+    background: #b52419;
+}
+
+.btnSecondary {
+    background: #666 !important;
+}
+
+.btnSecondary:hover {
+    background: #444 !important;
+}
+
+.progressContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.progressStep {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #999;
+}
+
+.progressStep.active {
+    background: var(--ch-red);
+    color: white;
+}
+
+.progressLine {
+    flex: 0.2;
+    height: 2px;
+    background: #eee;
+    margin: 0 10px;
+}
+
+.submitBtn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.message {
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.success {
+    background: #e6fffa;
+    color: #2c7a7b;
+    border: 1px solid #81e6d9;
+}
+
+.error {
+    background: #fff5f5;
+    color: #c53030;
+    border: 1px solid #feb2b2;
+}

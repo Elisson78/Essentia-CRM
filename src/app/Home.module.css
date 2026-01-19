@@ -1,0 +1,379 @@
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    background: var(--ch-white);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--ch-red);
+    letter-spacing: -1px;
+}
+
+.navActions {
+    display: flex;
+    gap: 15px;
+}
+
+.btnLink {
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btnConnexion {
+    color: var(--ch-red);
+    border: 1px solid var(--ch-red);
+}
+
+.btnConnexion:hover {
+    background: rgba(213, 43, 30, 0.05);
+}
+
+.btnInscription {
+    background: var(--ch-red);
+    color: var(--ch-white);
+}
+
+.btnInscription:hover {
+    background: #b52419;
+}
+
+/* Hero Section */
+.hero {
+    padding: 100px 20px;
+    text-align: center;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F9F9F9 100%);
+}
+
+.heroContent {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.hero p {
+    font-size: 20px;
+    color: var(--text-light);
+    margin-bottom: 40px;
+}
+
+.btnHero {
+    display: inline-block;
+    padding: 18px 36px;
+    background: var(--ch-red);
+    color: var(--ch-white);
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease;
+}
+
+.btnHero:hover {
+    transform: translateY(-2px);
+    background: #b52419;
+}
+
+/* Comment ça marche */
+.howItWorks {
+    padding: 80px 20px;
+    background: var(--ch-white);
+}
+
+.sectionTitle {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 50px;
+}
+
+.stepsGrid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.stepCard {
+    flex: 1;
+    min-width: 280px;
+    padding: 40px;
+    background: var(--bg-light);
+    border-radius: var(--radius);
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.stepNumber {
+    width: 40px;
+    height: 40px;
+    background: var(--ch-red);
+    color: var(--ch-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-weight: 700;
+}
+
+/* Trust block */
+.trust {
+    padding: 60px 20px;
+    background: var(--ch-red);
+    color: var(--ch-white);
+    text-align: center;
+}
+
+.trustText {
+    font-size: 24px;
+    font-weight: 500;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Intelligent Lead Generation */
+.statsSection {
+    padding: 100px 20px;
+    background: var(--ch-white);
+    text-align: center;
+}
+
+.statsSection h2 {
+    font-size: 36px;
+    color: #002A54;
+    /* Un bleu foncé comme sur l'image */
+    margin-bottom: 10px;
+}
+
+.subTitle {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 60px;
+}
+
+.statsGrid {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.statItem {
+    flex: 1;
+}
+
+.statValue {
+    font-size: 64px;
+    font-weight: 800;
+    color: #002A54;
+    margin-bottom: 10px;
+}
+
+.statLabel {
+    font-size: 20px;
+    color: #666;
+}
+
+/* Competitive Advantage */
+.advantageSection {
+    padding: 100px 20px;
+    background: #F4F7F9;
+    text-align: center;
+}
+
+.advantageSection h2 {
+    font-size: 32px;
+    color: #002A54;
+    margin-bottom: 60px;
+}
+
+.advantageGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.advantageCard {
+    background: var(--ch-white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.cardIcon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #3182CE;
+}
+
+.advantageCard h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #002A54;
+}
+
+.advantageCard p {
+    font-size: 14px;
+    color: #718096;
+    line-height: 1.6;
+}
+
+/* Footer Section Enhanced */
+.footer {
+    padding: 100px 40px 40px;
+    background: #001529;
+    /* Bleu très foncé presque noir */
+    color: var(--ch-white);
+}
+
+.footerGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 60px;
+    max-width: var(--max-width);
+    margin: 0 auto 80px;
+    text-align: left;
+}
+
+.footerBrand .logo {
+    font-size: 28px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.footerBrand p {
+    color: #A0AEC0;
+    line-height: 1.6;
+}
+
+.footerColumn h4 {
+    font-size: 18px;
+    margin-bottom: 25px;
+    color: var(--ch-white);
+}
+
+.footerColumn ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footerColumn ul li {
+    margin-bottom: 15px;
+}
+
+.footerColumn ul li a {
+    color: #A0AEC0;
+    transition: color 0.2s;
+}
+
+.footerColumn ul li a:hover {
+    color: var(--ch-red);
+}
+
+.newsletter h4 {
+    margin-bottom: 15px;
+}
+
+.newsletterInput {
+    display: flex;
+    margin-top: 20px;
+}
+
+.newsletterInput input {
+    padding: 12px;
+    border-radius: 6px 0 0 6px;
+    border: none;
+    flex: 1;
+}
+
+.newsletterInput button {
+    padding: 12px 20px;
+    background: var(--ch-red);
+    color: white;
+    border-radius: 0 6px 6px 0;
+    font-weight: 600;
+}
+
+.footerBottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    color: #718096;
+    font-size: 14px;
+}
+
+.socialLinks {
+    display: flex;
+    gap: 20px;
+}
+
+@media (max-width: 992px) {
+    .footerGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 0 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .stepsGrid {
+        flex-direction: column;
+    }
+
+    .statsGrid {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .advantageGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .footerGrid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footerBottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}

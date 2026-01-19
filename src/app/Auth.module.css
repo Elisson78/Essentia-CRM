@@ -1,0 +1,74 @@
+.container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 40px;
+    background: var(--ch-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border-top: 5px solid var(--ch-red);
+}
+
+.title {
+    text-align: center;
+    color: var(--ch-red);
+    margin-bottom: 30px;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.formGroup input,
+.formGroup select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 14px;
+    background: var(--ch-red);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.submitBtn:hover {
+    background: #b52419;
+}
+
+.switch {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.switch a {
+    color: var(--ch-red);
+    font-weight: 600;
+}
+
+.error {
+    color: #c53030;
+    background: #fff5f5;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #feb2b2;
+}
