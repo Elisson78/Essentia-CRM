@@ -7,7 +7,7 @@ import Sidebar from '@/components/Sidebar';
 
 export default function CompanyDashboard() {
     const { user, loading, logout } = useAuth();
-    const [leads, setLeads] = useState([]);
+    const [leads, setLeads] = useState<any[]>([]);
     const [updating, setUpdating] = useState(false);
     const router = useRouter();
 

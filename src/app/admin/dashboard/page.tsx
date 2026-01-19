@@ -7,7 +7,7 @@ import Sidebar from '@/components/Sidebar';
 
 export default function AdminDashboard() {
     const { user, loading, logout } = useAuth();
-    const [leads, setLeads] = useState([]);
+    const [leads, setLeads] = useState<any[]>([]);
     const [stats, setStats] = useState({
         totalRevenue: 0,
         totalLeads: 0,

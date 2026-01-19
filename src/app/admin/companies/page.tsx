@@ -7,7 +7,7 @@ import Sidebar from '@/components/Sidebar';
 
 export default function AdminCompaniesPage() {
     const { user, loading, logout } = useAuth();
-    const [companies, setCompanies] = useState([]);
+    const [companies, setCompanies] = useState<any[]>([]);
     const router = useRouter();
 
     useEffect(() => {

@@ -7,7 +7,7 @@ import Sidebar from '@/components/Sidebar';
 
 export default function AdminLeadsPage() {
     const { user, loading, logout } = useAuth();
-    const [leads, setLeads] = useState([]);
+    const [leads, setLeads] = useState<any[]>([]);
     const router = useRouter();
 
     useEffect(() => {
