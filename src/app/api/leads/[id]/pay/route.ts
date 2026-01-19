@@ -4,11 +4,11 @@ import { getLeadCheckoutSession } from '@/lib/stripe';
 
 export async function POST(
     request: Request,
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ) {
     try {
+        const { id: lead_id } = await params;
         const { company_id, email } = await request.json();
-        const lead_id = params.id;
 
         if (!company_id) {
             return NextResponse.json({ error: 'company_id requis' }, { status: 400 });
