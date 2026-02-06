@@ -1,0 +1,199 @@
+/* Pro Page Styles */
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Header (Simplified for Pro page, keeping consistency) */
+.header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: #D52B1E;
+    letter-spacing: -1px;
+}
+
+.navActions {
+    display: flex;
+    gap: 15px;
+}
+
+.btnLink {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btnInscription {
+    background: #D52B1E;
+    color: #fff;
+}
+
+.btnInscription:hover {
+    background: #b52419;
+}
+
+/* Hero Section Pro */
+.hero {
+    padding: 100px 20px;
+    text-align: center;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F9F9F9 100%);
+}
+
+.heroContent {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.btnHero {
+    display: inline-block;
+    padding: 18px 36px;
+    background: #D52B1E;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.btnHero:hover {
+    transform: translateY(-2px);
+    background: #b52419;
+}
+
+/* Intelligent Lead Generation */
+.statsSection {
+    padding: 100px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.statsSection h2 {
+    font-size: 36px;
+    color: #002A54;
+    margin-bottom: 10px;
+}
+
+.subTitle {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 60px;
+}
+
+.statsGrid {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.statItem {
+    flex: 1;
+}
+
+.statValue {
+    font-size: 64px;
+    font-weight: 800;
+    color: #002A54;
+    margin-bottom: 10px;
+}
+
+.statLabel {
+    font-size: 20px;
+    color: #666;
+}
+
+/* Competitive Advantage */
+.advantageSection {
+    padding: 100px 20px;
+    background: #F4F7F9;
+    text-align: center;
+}
+
+.advantageSection h2 {
+    font-size: 32px;
+    color: #002A54;
+    margin-bottom: 60px;
+}
+
+.advantageGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.advantageCard {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.cardIcon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #3182CE;
+}
+
+.advantageCard h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #002A54;
+}
+
+.advantageCard p {
+    font-size: 14px;
+    color: #718096;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        padding: 0 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .statsGrid {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .advantageGrid {
+        grid-template-columns: 1fr;
+    }
+}

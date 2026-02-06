@@ -29,14 +29,29 @@ export default function DemandeDevis() {
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
 
+    const [categories, setCategories] = useState<any[]>([]);
+
     useEffect(() => {
         if (user) {
-            setFormData(prev => ({
+            setFormData((prev: any) => ({
                 ...prev,
                 name: user.name || '',
                 email: user.email || '',
             }));
         }
+
+        // Fetch categories dynamically
+        const fetchCategories = async () => {
+            try {
+                const res = await fetch('/api/admin/categories');
+                if (res.ok) {
+                    setCategories(await res.json());
+                }
+            } catch (error) {
+                console.error('Error fetching categories:', error);
+            }
+        };
+        fetchCategories();
     }, [user]);
 
     const nextStep = () => {
@@ -49,12 +64,12 @@ export default function DemandeDevis() {
             return;
         }
         setMessage(null);
-        setStep(prev => prev + 1);
+        setStep((prev: number) => prev + 1);
     };
 
     const prevStep = () => {
         setMessage(null);
-        setStep(prev => prev - 1);
+        setStep((prev: number) => prev - 1);
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -195,10 +210,11 @@ export default function DemandeDevis() {
                                         required
                                     >
                                         <option value="">Sélectionnez</option>
-                                        <option value="Rénovation">Rénovation</option>
-                                        <option value="Peinture">Peinture</option>
-                                        <option value="Électricité">Électricité</option>
-                                        <option value="Jardinage">Jardinage</option>
+                                        {categories.map((cat) => (
+                                            <option key={cat.id} value={cat.name}>
+                                                {cat.name}
+                                            </option>
+                                        ))}
                                     </select>
                                 </div>
                                 <div className={styles.formGroup}>
@@ -213,18 +229,7 @@ export default function DemandeDevis() {
                                 </div>
                             </div>
 
-                            <div className={styles.formGroup}>
-                                <label>Ampleur do projet</label>
-                                <select
-                                    value={formData.project_type}
-                                    onChange={(e) => setFormData({ ...formData, project_type: e.target.value })}
-                                    required
-                                >
-                                    <option value="simple">Rénovation simple (CHF 30)</option>
-                                    <option value="medium">Reforme média (CHF 50)</option>
-                                    <option value="large">Reforme grande (CHF 80)</option>
-                                </select>
-                            </div>
+
 
                             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                                 <div className={styles.formGroup}>

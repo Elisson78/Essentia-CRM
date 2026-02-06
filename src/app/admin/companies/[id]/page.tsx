@@ -82,7 +82,7 @@ export default function CompanyDetailsPage() {
                             <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', color: '#666' }}>Nom de l'entreprise</label>
                             <input
                                 value={company.name}
-                                onChange={e => setCompany({ ...company, name: e.target.value })}
+                                onChange={(e: any) => setCompany({ ...company, name: e.target.value })}
                                 style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #ddd' }}
                                 required
                             />
@@ -101,7 +101,7 @@ export default function CompanyDetailsPage() {
                                 <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', color: '#666' }}>Téléphone</label>
                                 <input
                                     value={company.phone || ''}
-                                    onChange={e => setCompany({ ...company, phone: e.target.value })}
+                                    onChange={(e: any) => setCompany({ ...company, phone: e.target.value })}
                                     style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #ddd' }}
                                 />
                             </div>
@@ -111,7 +111,7 @@ export default function CompanyDetailsPage() {
                             <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', color: '#666' }}>Description / Spécialités</label>
                             <textarea
                                 value={company.description || ''}
-                                onChange={e => setCompany({ ...company, description: e.target.value })}
+                                onChange={(e: any) => setCompany({ ...company, description: e.target.value })}
                                 style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid #ddd', minHeight: '100px' }}
                             />
                         </div>

@@ -20,6 +20,7 @@ export default function Sidebar({ role, userName, onLogout }: SidebarProps) {
                     { label: 'Tableau de Bord', href: '/admin/dashboard' },
                     { label: 'Gérer les Leads', href: '/admin/leads' },
                     { label: 'Entreprises', href: '/admin/companies' },
+                    { label: 'Types de travaux', href: '/admin/categories' },
                     { label: 'Utilisateurs', href: '/admin/users' },
                     { label: 'Plans & Abonnements', href: '/admin/subscriptions' },
                     { label: 'Paramètres', href: '/admin/settings' },

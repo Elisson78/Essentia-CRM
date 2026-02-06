@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from './Home.module.css';
+import CategoriesSection from '@/components/CategoriesSection';
 
 export default function Home() {
   return (
@@ -8,6 +9,9 @@ export default function Home() {
       <header className={styles.header}>
         <div className={styles.logo}>DevisMaison</div>
         <div className={styles.navActions}>
+          <Link href="/pro" className={`${styles.btnLink}`} style={{ color: '#666' }}>
+            Espace Pro
+          </Link>
           <Link href="/login" className={`${styles.btnLink} ${styles.btnConnexion}`}>
             Connexion
           </Link>
@@ -28,52 +32,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Intelligent Lead Generation Section */}
-      <section className={styles.statsSection}>
-        <h2>Génération de Leads Intelligente</h2>
-        <p className={styles.subTitle}>Rendu possible par la numérisation</p>
-        <div className={styles.statsGrid}>
-          <div className={styles.statItem}>
-            <div className={styles.statValue}>2x</div>
-            <p className={styles.statLabel}>Cycles de vente plus rapides</p>
-          </div>
-          <div className={styles.statItem}>
-            <div className={styles.statValue}>10x</div>
-            <p className={styles.statLabel}>Plus de leads qualifiés</p>
-          </div>
-          <div className={styles.statItem}>
-            <div className={styles.statValue}>50%</div>
-            <p className={styles.statLabel}>Commerciaux plus efficaces</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Your Competitive Advantage Section */}
-      <section className={styles.advantageSection}>
-        <h2>Votre Avantage Compétitif</h2>
-        <div className={styles.advantageGrid}>
-          <div className={styles.advantageCard}>
-            <div className={styles.cardIcon}>✅</div>
-            <h3>Leads Qualifiés</h3>
-            <p>Recevez des informations exclusives sur des projets de construction lucratifs adaptés à vos besoins.</p>
-          </div>
-          <div className={styles.advantageCard}>
-            <div className={styles.cardIcon}>⏱️</div>
-            <h3>Plus de temps pour vendre</h3>
-            <p>Tous les leads sont enrichis de détails supplémentaires, vous permettant de les contacter immédiatement.</p>
-          </div>
-          <div className={styles.advantageCard}>
-            <div className={styles.cardIcon}>📈</div>
-            <h3>Pipeline de vente complet</h3>
-            <p>Une base solide de leads qualifiés pour votre succès commercial à long terme.</p>
-          </div>
-          <div className={styles.advantageCard}>
-            <div className={styles.cardIcon}>💰</div>
-            <h3>Plus de revenus</h3>
-            <p>Améliorez votre taux de réussite en recevant des leads qualifiés au moment opportun.</p>
-          </div>
-        </div>
-      </section>
+      {/* Popular Categories Section - NEW */}
+      <CategoriesSection />
 
       {/* Comment ça marche */}
       <section className={styles.howItWorks}>

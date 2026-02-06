@@ -54,7 +54,7 @@ export default function UsersAdminPage() {
             });
 
             if (res.ok) {
-                setUsers(prev => prev.map(u => u.id === userId ? { ...u, role: newRole } : u));
+                setUsers((prev: UserData[]) => prev.map(u => u.id === userId ? { ...u, role: newRole } : u));
             } else {
                 alert('Erreur lors de la mise à jour du rôle.');
             }

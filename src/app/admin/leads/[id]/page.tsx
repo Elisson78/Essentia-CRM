@@ -68,7 +68,7 @@ export default function LeadDetailsPage() {
             });
             if (res.ok) {
                 const updated = await res.json();
-                setLead(prev => ({ ...prev, status: updated.status }));
+                setLead((prev: any) => ({ ...prev, status: updated.status }));
             }
         } catch (e) {
             console.error(e);
@@ -141,7 +141,7 @@ export default function LeadDetailsPage() {
                         </div>
                         <select
                             value={lead.status}
-                            onChange={(e) => updateStatus(e.target.value)}
+                            onChange={(e: any) => updateStatus(e.target.value)}
                             disabled={updating}
                             style={{ padding: '10px', borderRadius: '8px', border: '1px solid #ddd', fontWeight: 'bold' }}
                         >
@@ -243,7 +243,7 @@ export default function LeadDetailsPage() {
                                     <button
                                         onClick={() => {
                                             const sel = document.getElementById('assign-select') as HTMLSelectElement;
-                                            if (sel.value) assignToCompany(parseInt(sel.value));
+                                            if (sel && sel.value) assignToCompany(parseInt(sel.value));
                                         }}
                                         disabled={updating}
                                         style={{ background: '#D52B1E', color: 'white', padding: '10px 25px', borderRadius: '8px', border: 'none', fontWeight: 'bold', cursor: 'pointer' }}
