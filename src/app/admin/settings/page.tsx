@@ -27,7 +27,7 @@ export default function AdminSettingsPage() {
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
                         <div>
                             <label style={{ display: 'block', marginBottom: '5px', fontSize: '14px', color: '#666' }}>Logo URL</label>
-                            <input disabled value="/logo.png" style={{ background: '#f9f9f9', width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #ddd' }} />
+                            <input disabled value="/logo-brand.png" style={{ background: '#f9f9f9', width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #ddd' }} />
                         </div>
                         <div>
                             <label style={{ display: 'block', marginBottom: '5px', fontSize: '14px', color: '#666' }}>Couleur Primaire</label>

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '../Auth.module.css';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Login() {
     const [formData, setFormData] = useState({ email: '', password: '' });
@@ -45,6 +46,17 @@ export default function Login() {
     return (
         <div style={{ background: '#f5f5f5', minHeight: '100vh', padding: '20px' }}>
             <div className={styles.container}>
+                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+                    <Link href="/">
+                        <Image
+                            src="/logo-brand.png"
+                            alt="DevisMaison Logo"
+                            width={180}
+                            height={50}
+                            style={{ objectFit: 'contain' }}
+                        />
+                    </Link>
+                </div>
                 <h1 className={styles.title}>Connexion</h1>
 
                 {error && <div className={styles.error}>{error}</div>}

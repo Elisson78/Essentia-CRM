@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import styles from './Sidebar.module.css';
 
@@ -58,7 +59,15 @@ export default function Sidebar({ role, userName, onLogout, isOpen = false, onCl
             <aside className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
                 <div className={styles.logoArea}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <div className={styles.logo}>DevisMaison</div>
+                        <Link href="/" className={styles.logo}>
+                            <Image
+                                src="/logo-brand.png"
+                                alt="DevisMaison Logo"
+                                width={140}
+                                height={56}
+                                priority
+                            />
+                        </Link>
                         {/* Close button for mobile */}
                         <button
                             onClick={onClose}

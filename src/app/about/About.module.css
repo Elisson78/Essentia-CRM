@@ -1,0 +1,76 @@
+.valuesSection {
+    background: #F7FAFC;
+    padding: 80px 20px;
+}
+
+.valuesContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.valuesTitle {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 60px;
+    color: var(--text-dark, #1A202C);
+}
+
+.valuesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.valueCard {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.valueCard:hover {
+    transform: translateY(-5px);
+}
+
+.iconWrapper {
+    color: #D52B1E;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.cardTitle {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-dark, #1A202C);
+}
+
+.cardText {
+    color: #718096;
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .valuesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .valuesGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .valuesTitle {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .valueCard {
+        padding: 30px 20px;
+    }
+}

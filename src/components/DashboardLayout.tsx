@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import Sidebar from './Sidebar';
 import { Menu } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface DashboardLayoutProps {
     children: React.ReactNode;
@@ -38,7 +40,15 @@ export default function DashboardLayout({ children, role, userName, onLogout }: 
                     >
                         <Menu size={24} color="#2d3748" />
                     </button>
-                    <span style={{ fontWeight: '800', fontSize: '18px', color: '#D52B1E' }}>DevisMaison</span>
+                    <Link href="/">
+                        <Image
+                            src="/logo-brand.png"
+                            alt="DevisMaison Logo"
+                            width={120}
+                            height={30}
+                            style={{ objectFit: 'contain' }}
+                        />
+                    </Link>
                 </div>
             </header>
 

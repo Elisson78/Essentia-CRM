@@ -1,21 +1,13 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './Pro.module.css';
+import ProHeader from '@/components/ProHeader';
 
 export default function ProPage() {
     return (
         <div className={styles.container}>
             {/* Header */}
-            <header className={styles.header}>
-                <div className={styles.logo}>DevisMaison <span style={{ fontSize: '0.8em', color: '#666', fontWeight: 400 }}>Pro</span></div>
-                <div className={styles.navActions}>
-                    <Link href="/" className={styles.btnLink} style={{ color: '#666' }}>
-                        Espace Client
-                    </Link>
-                    <Link href="/register?role=ENTREPRISE" className={`${styles.btnLink} ${styles.btnInscription}`}>
-                        Inscription Entreprise
-                    </Link>
-                </div>
-            </header>
+            <ProHeader />
 
             {/* Hero Section Pro */}
             <section className={styles.hero}>

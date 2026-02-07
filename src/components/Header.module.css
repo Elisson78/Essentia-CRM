@@ -13,10 +13,9 @@
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: 800;
-    color: #D52B1E;
-    letter-spacing: -1px;
+    display: flex;
+    align-items: center;
+    /* Ensure it has space */
 }
 
 .navDesktop {

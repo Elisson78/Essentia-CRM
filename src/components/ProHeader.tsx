@@ -4,35 +4,32 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
-import styles from './Header.module.css';
+import styles from '../app/pro/Pro.module.css';
 
-export default function Header() {
+export default function ProHeader() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     return (
         <header className={styles.header}>
-            <Link href="/" className={styles.logo}>
+            <div className={styles.logo} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <Image
                     src="/logo-brand.png"
                     alt="DevisMaison Logo"
-                    width={150}
-                    height={60}
-                    priority
+                    width={140}
+                    height={35}
+                    style={{ objectFit: 'contain' }}
                 />
-            </Link>
+            </div>
 
             {/* Desktop Navigation */}
-            <div className={styles.navDesktop}>
-                <Link href="/pro" className={`${styles.btnLink} ${styles.btnPro}`}>
-                    Espace Pro
+            <div className={styles.navActions}>
+                <Link href="/" className={styles.btnLink} style={{ color: '#666' }}>
+                    Espace Client
                 </Link>
-                <Link href="/login" className={`${styles.btnLink} ${styles.btnConnexion}`}>
-                    Connexion
-                </Link>
-                <Link href="/register" className={`${styles.btnLink} ${styles.btnInscription}`}>
-                    Inscription
+                <Link href="/register?role=ENTREPRISE" className={`${styles.btnLink} ${styles.btnInscription}`}>
+                    Inscription Entreprise
                 </Link>
             </div>
 
@@ -44,7 +41,7 @@ export default function Header() {
             {/* Mobile Menu Overlay */}
             <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ''}`}>
                 <div className={styles.mobileHeader}>
-                    <div className={styles.logo}>
+                    <div className={styles.logo} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <Image
                             src="/logo-brand.png"
                             alt="DevisMaison Logo"
@@ -58,17 +55,14 @@ export default function Header() {
                 </div>
 
                 <nav className={styles.mobileNav}>
-                    <Link href="/pro" className={styles.mobileLink} onClick={toggleMenu}>
-                        Espace Pro
+                    <Link href="/" className={styles.mobileLink} onClick={toggleMenu}>
+                        Espace Client
                     </Link>
-                    <Link href="/demande-devis" className={styles.mobileLink} onClick={toggleMenu} style={{ color: '#D52B1E' }}>
-                        Demander un devis
+                    <Link href="/register?role=ENTREPRISE" className={`${styles.btnLink} ${styles.btnInscription}`} onClick={toggleMenu} style={{ textAlign: 'center', marginTop: '20px' }}>
+                        Inscription Entreprise
                     </Link>
                     <Link href="/login" className={styles.mobileLink} onClick={toggleMenu}>
                         Connexion
-                    </Link>
-                    <Link href="/register" className={`${styles.btnLink} ${styles.btnInscription}`} onClick={toggleMenu} style={{ textAlign: 'center', marginTop: '20px' }}>
-                        Inscription
                     </Link>
                 </nav>
             </div>
