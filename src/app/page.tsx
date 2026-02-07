@@ -1,25 +1,13 @@
 import Link from 'next/link';
 import styles from './Home.module.css';
 import CategoriesSection from '@/components/CategoriesSection';
+import Header from '@/components/Header';
 
 export default function Home() {
   return (
     <div className={styles.container}>
       {/* Header */}
-      <header className={styles.header}>
-        <div className={styles.logo}>DevisMaison</div>
-        <div className={styles.navActions}>
-          <Link href="/pro" className={`${styles.btnLink}`} style={{ color: '#666' }}>
-            Espace Pro
-          </Link>
-          <Link href="/login" className={`${styles.btnLink} ${styles.btnConnexion}`}>
-            Connexion
-          </Link>
-          <Link href="/register" className={`${styles.btnLink} ${styles.btnInscription}`}>
-            Inscription
-          </Link>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className={styles.hero}>

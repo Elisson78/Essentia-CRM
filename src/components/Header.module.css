@@ -1,0 +1,126 @@
+/* Header.module.css */
+.header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: #D52B1E;
+    letter-spacing: -1px;
+}
+
+.navDesktop {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btnLink {
+    padding: 10px 20px;
+    border-radius: 6px;
+    /* var(--radius) substitute */
+    font-weight: 600;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.btnPro {
+    color: #666;
+}
+
+.btnPro:hover {
+    color: #D52B1E;
+}
+
+.btnConnexion {
+    color: #D52B1E;
+    border: 1px solid #D52B1E;
+}
+
+.btnConnexion:hover {
+    background: rgba(213, 43, 30, 0.05);
+}
+
+.btnInscription {
+    background: #D52B1E;
+    color: white;
+}
+
+.btnInscription:hover {
+    background: #b52419;
+}
+
+/* Mobile Styles */
+.mobileMenuBtn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobileMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    z-index: 200;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobileMenu.open {
+    transform: translateY(0);
+}
+
+.mobileHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.mobileNav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mobileLink {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d3748;
+    text-decoration: none;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #edf2f7;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 0 20px;
+    }
+
+    .navDesktop {
+        display: none;
+    }
+
+    .mobileMenuBtn {
+        display: block;
+    }
+}

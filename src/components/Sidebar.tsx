@@ -8,9 +8,11 @@ interface SidebarProps {
     role: 'ADMIN' | 'CLIENT' | 'ENTREPRISE';
     userName: string;
     onLogout: () => void;
+    isOpen?: boolean;
+    onClose?: () => void;
 }
 
-export default function Sidebar({ role, userName, onLogout }: SidebarProps) {
+export default function Sidebar({ role, userName, onLogout, isOpen = false, onClose }: SidebarProps) {
     const pathname = usePathname();
 
     const getLinks = () => {
@@ -46,35 +48,69 @@ export default function Sidebar({ role, userName, onLogout }: SidebarProps) {
     const links = getLinks();
 
     return (
-        <aside className={styles.sidebar}>
-            <div className={styles.logoArea}>
-                <div className={styles.logo}>DevisMaison</div>
-            </div>
+        <>
+            {/* Mobile Overlay */}
+            <div
+                className={`${styles.overlay} ${isOpen ? styles.visible : ''}`}
+                onClick={onClose}
+            />
 
-            <div style={{ padding: '0 30px', margin: '20px 0' }}>
-                <p style={{ fontSize: '11px', color: '#a0aec0', textTransform: 'uppercase', letterSpacing: '1.5px', fontWeight: '800', marginBottom: '4px' }}>
-                    Espace {role.toLowerCase()}
-                </p>
-                <p style={{ fontSize: '15px', fontWeight: '800', color: '#2d3748' }}>{userName}</p>
-            </div>
+            <aside className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
+                <div className={styles.logoArea}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <div className={styles.logo}>DevisMaison</div>
+                        {/* Close button for mobile */}
+                        <button
+                            onClick={onClose}
+                            style={{
+                                display: 'none', // Hidden on desktop
+                                background: 'transparent',
+                                border: 'none',
+                                fontSize: '24px',
+                                cursor: 'pointer',
+                                color: '#666'
+                            }}
+                            className="mobile-close-btn" // We'll target this in CSS media query
+                        >
+                            ×
+                        </button>
+                    </div>
+                </div>
 
-            <nav className={styles.nav}>
-                {links.map((link) => (
-                    <Link
-                        key={link.label}
-                        href={link.href}
-                        className={`${styles.navLink} ${pathname === link.href ? styles.active : ''}`}
-                    >
-                        {link.label}
-                    </Link>
-                ))}
-            </nav>
+                <div style={{ padding: '0 30px', margin: '20px 0' }}>
+                    <p style={{ fontSize: '11px', color: '#a0aec0', textTransform: 'uppercase', letterSpacing: '1.5px', fontWeight: '800', marginBottom: '4px' }}>
+                        Espace {role.toLowerCase()}
+                    </p>
+                    <p style={{ fontSize: '15px', fontWeight: '800', color: '#2d3748' }}>{userName}</p>
+                </div>
 
-            <div className={styles.footer}>
-                <button onClick={onLogout} className={styles.logoutBtn}>
-                    <span>Déconnexion</span>
-                </button>
-            </div>
-        </aside>
+                <nav className={styles.nav}>
+                    {links.map((link) => (
+                        <Link
+                            key={link.label}
+                            href={link.href}
+                            onClick={onClose} // Close sidebar on navigation (mobile)
+                            className={`${styles.navLink} ${pathname === link.href ? styles.active : ''}`}
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
+                </nav>
+
+                <div className={styles.footer}>
+                    <button onClick={onLogout} className={styles.logoutBtn}>
+                        <span>Déconnexion</span>
+                    </button>
+                </div>
+            </aside>
+
+            <style jsx>{`
+                @media (max-width: 768px) {
+                    .mobile-close-btn {
+                        display: block !important;
+                    }
+                }
+            `}</style>
+        </>
     );
 }
